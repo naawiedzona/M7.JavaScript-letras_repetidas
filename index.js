@@ -6,6 +6,7 @@ btn5.onclick = cinco;
 
 var myName = ["N", "A", "T", "A", "L", "I", "A"];
 var myName2 = ["N", "A", "T", "A", "L", "I", "A", "1"];
+var MyNameString = myName.join("").toLowerCase();
 
 // EJERCICIO 1
 function uno() {
@@ -28,7 +29,7 @@ function dos() {
 }
 
 // EJERCICIO 3
-function tres() {
+/* function tres() {
   var MyNameString = myName.join("").toLowerCase();
   var counts = {};
   var myNameLetter, count;
@@ -45,6 +46,21 @@ function tres() {
 
   for (myNameLetter in counts) {
     console.log(myNameLetter + ":" + counts[myNameLetter]);
+  }
+} */
+
+function tres() {
+  let charMap = new Map();
+  const count = 0;
+  for (const key of MyNameString) {
+    charMap.set(key, count);
+  }
+  for (const key of MyNameString) {
+    let count = charMap.get(key);
+    charMap.set(key, ++count);
+  }
+  for (const [key, value] of charMap) {
+    console.log(key, value);
   }
 }
 
